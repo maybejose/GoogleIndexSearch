@@ -1,4 +1,4 @@
-# GoogleIndexSearch
+# Google Index Search
 Search for the position of a website in Google's index given a word(s) to search for. 
 
 You can open the demo.html to view an example use of the script.
