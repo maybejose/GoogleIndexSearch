@@ -16,7 +16,7 @@ def search():
         print('Checking from article',start+1)
         try:
             req = Request(url, headers=headers)
-            html = urlopen(req).read()
+            html = urlopen(req).read().decode()
         except Exception as e:
             print(str(e))
             return
@@ -25,13 +25,13 @@ def search():
         for tag in tags:
             position += 1
             if searchaddress in str(tag):
-                print('Address found on:')
-                print(url)
+                print('Address found:')
+                print(str(tag.string))
                 print('in position',position,'of Google.com index')
                 return
         start += 10
-        url = url +'&start='+str(start)
-        time.sleep(3)
+        url = 'http://www.google.com/search?q='+'+'.join(searchword) +'&start='+ str(start)
+        time.sleep(2)
 
 if __name__ == '__main__':
     search()
